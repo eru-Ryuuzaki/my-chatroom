@@ -2,9 +2,14 @@ import { createRouter, createWebHashHistory } from "vue-router";
 // 路由信息
 const routes = [
   {
-    path: "/Login",
+    path: "/login",
     name: "login",
     component: () => import("@/views/login/Login.vue"),
+  },
+  {
+    path: "/chat-hall",
+    name: "chat-hall",
+    component: () => import("@/views/chat-hall/index.vue"),
   },
 ];
 
@@ -26,10 +31,10 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem("token");
-  if (to.name !== "login" && !isAuthenticated) next({ name: "login" });
-  else next();
-});
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = localStorage.getItem("token");
+//   if (to.name !== "login" && !isAuthenticated) next({ name: "login" });
+//   else next();
+// });
 
 export default router;

@@ -41,10 +41,17 @@
   width: 100%;
   background-color: black;
   padding: 30px 0;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  // 这个关键啊！不然滚动条出现的话，不能实现视觉居中
+  overflow: hidden;
   .logo {
     width: 366px;
     height: 366px;
     margin: 50px 0;
+    // margin: auto;
   }
   .main {
     div {
